@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar (Android only) -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Meu dia a dia</title>
+    <!-- Path to Framework7 Library Bundle CSS -->
+    <link rel="stylesheet" href="lib/framework7-bundle.min.css"><!-- CSS PERSONALIZADO PARA MENU-->
+    <link rel="stylesheet" href="css/minijogosStyle.css">
+
+
+</head>
+
+<body>
+    <!-- App root element -->
+    <div id="app">
+
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Initial Page, "data-name" contains page name -->
+            <div data-name="link3" class="page">
+
+                <!-- Top Navbar topo-->
+                <div class="top-nav">
+                    <h1 class="title-logo"> <span>Meu dia</span> a dia</h1>
+                    <a href="#" class="btn-logout hover-effect" onclick="logout()">
+                        <i class="ri-logout-box-line"></i>
+                    </a>
+                 </div>
+
+                <!-- Scrollable page content -->
+                <div class="page-content">
+                    <div class="block">
+                        
+                        <div class="container py-4">
+                            <div class="row row-cols-2 row-cols-md-3 g-3">
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="https://www.escolagames.com.br/_next/image?url=https%3A%2F%2Fadm.escolagames.com.br%2Fuploads%2Fjogo_do_plural_dbd01d63ed.jpg&w=384&q=75"
+                                            class="card-img-top" alt="Jogo do Plural" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">Jogo do Plural</h5>
+                                            <p class="card-text">
+                                                Aprenda sobre plurais de uma forma divertida e interativa.
+                                            </p>
+                                            <!-- Modificando para abrir no InAppBrowser -->
+                                            <a href="#" class="btn btn-primary" onclick="abrirLinkExterno('https://www.escolagames.com.br/jogos/jogo-do-plural')">Jogar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="https://www.escolagames.com.br/_next/image?url=https%3A%2F%2Fadm.escolagames.com.br%2Fuploads%2Fcompletando_os_numeros_ac208414bc.jpg&w=384&q=75"
+                                            class="card-img-top" alt="Completando os Números" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">Completando os Números</h5>
+                                            <p class="card-text">
+                                                Complete os números e melhore sua habilidade matemática.
+                                            </p>
+                                            <a href="https://www.escolagames.com.br/jogos/completando-os-numeros" target="_blank" class="btn btn-primary">Jogar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="https://www.escolagames.com.br/_next/image?url=https%3A%2F%2Fadm.escolagames.com.br%2Fuploads%2Fsopa_de_letrinhas_3a4e54d051.jpg&w=384&q=75"
+                                            class="card-img-top" alt="Sopa de Letrinhas" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">Sopa de Letrinhas</h5>
+                                            <p class="card-text">
+                                                Encontre as palavras escondidas na sopa de letrinhas.
+                                            </p>
+                                            <a href="https://www.escolagames.com.br/jogos/sopa-de-letrinhas" target="_blank" class="btn btn-primary">Jogar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="https://www.escolagames.com.br/_next/image?url=https%3A%2F%2Fadm.escolagames.com.br%2Fuploads%2Fordem_alfabetica_7539a60b11.jpg&w=384&q=75"
+                                            class="card-img-top" alt="Ordem Alfabética" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">Ordem Alfabética</h5>
+                                            <p class="card-text">
+                                                Organize as palavras em ordem alfabética e divirta-se aprendendo.
+                                            </p>
+                                            <a href="https://www.escolagames.com.br/jogos/ordem-alfabetica" target="_blank" class="btn btn-primary">Jogar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="https://www.escolagames.com.br/_next/image?url=https%3A%2F%2Fadm.escolagames.com.br%2Fuploads%2Fquiz_de_geografia_be626412e5.jpg&w=384&q=75"
+                                            class="card-img-top" alt="Quiz de Geografia" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">Quiz de Geografia</h5>
+                                            <p class="card-text">
+                                                Teste seus conhecimentos sobre geografia com perguntas desafiadoras.
+                                            </p>
+                                            <a href="https://www.escolagames.com.br/jogos/quiz-de-geografia" target="_blank" class="btn btn-primary">Jogar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="https://www.escolagames.com.br/_next/image?url=https%3A%2F%2Fadm.escolagames.com.br%2Fuploads%2Fforma_palavras_a778829d9f.jpg&w=384&q=75"
+                                            class="card-img-top" alt="Forma Palavras" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">Forma Palavras</h5>
+                                            <p class="card-text">
+                                                Junte as letras e forme palavras corretamente.
+                                            </p>
+                                            <a href="https://www.escolagames.com.br/jogos/forma-palavras" target="_blank" class="btn btn-primary">Jogar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script src="js/main.js"></script>
+    <scrip src="js/minijogos.js"></scrip>
+    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+	<!-- jQuery -->
+	<script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>	
+    <!-- Roteamento do app-->
+    <script type="text/javascript" src="js/routes.js"></script>
+    <script src="cordova.js"></script>
+        <!-- Script do InAppBrowser -->
+    <script type="text/javascript">
+        // Função para abrir um link externo no InAppBrowser
+        function abrirLinkExterno(url) {
+            // Usa o InAppBrowser para abrir a URL no navegador interno do app
+            cordova.InAppBrowser.open(url, '_blank', 'location=yes');
+        }
+    </script>
+</body>
+
+</html>
