@@ -2,6 +2,24 @@ html *{
     -webkit-font-smoothing: antialiased;
 }
 
+.page-content {
+    overflow-y: auto; /* Habilita rolagem vertical */
+    -webkit-overflow-scrolling: touch; /* Rolagem suave no iOS */
+    height: calc(100vh - 56px); /* Ajusta altura considerando a barra de navegação */
+    padding: 10px; /* Adiciona espaçamento interno */
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Garante que ocupe toda a largura */
+}
+
+.row.g-4 {
+    margin-top: 20px; /* Adiciona espaçamento entre as linhas de cards */
+}
+
+
 p{
     font-size: 14px;
     font-weight: 300;

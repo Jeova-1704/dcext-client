@@ -1,6 +1,6 @@
 function fetchAgenda() {
     const userId = localStorage.getItem("idUser");
-    const url = `http://localhost:8080/api/v1/agenda-to-do/${userId}`;
+    const url = `https://api-dcext-yxco.onrender.com/api/v1/agenda-to-do/${userId}`;
 
     fetch(url)
         .then(response => {

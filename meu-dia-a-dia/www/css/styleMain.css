@@ -7,6 +7,13 @@
     z-index: 99999;
  }
 
+ .page-content {
+    overflow-y: auto;
+    height: calc(100vh - 56px); /* Ajuste a altura para compensar a barra inferior */
+    -webkit-overflow-scrolling: touch; /* Suporte para rolagem suave em dispositivos móveis */
+    scroll-behavior: smooth;
+}
+
  #spinner.show {
      transition: opacity .8s ease-out, visibility 0s linear .0s;
      visibility: visible;

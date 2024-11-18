@@ -11,5 +11,8 @@
     <allow-navigation href="*" />
     <access origin="*" />
     <allow-intent href="*" />
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
 
 </widget>

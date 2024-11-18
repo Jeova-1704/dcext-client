@@ -1,0 +1,14 @@
+.page-content {
+    overflow-y: auto; /* Permite rolagem vertical */
+    -webkit-overflow-scrolling: touch; /* Suporte para rolagem suave no iOS */
+    height: calc(100vh - 56px); /* Ajusta a altura para evitar sobreposição com a barra superior */
+    padding: 10px; /* Adiciona espaçamento interno */
+}
+
+.block {
+    margin-bottom: 20px; /* Espaçamento entre os blocos de conteúdo */
+}
+
+.container {
+    max-width: 100%; /* Garante que o conteúdo ocupe toda a largura */
+}
