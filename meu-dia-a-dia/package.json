@@ -15,6 +15,7 @@
   "devDependencies": {
     "cordova-android": "^13.0.0",
     "cordova-plugin-android-permissions": "^1.1.5",
+    "cordova-plugin-dialogs": "^2.0.2",
     "cordova-plugin-inappbrowser": "^6.0.0",
     "cordova-plugin-tts": "^0.2.3"
   },
@@ -25,7 +26,8 @@
     "plugins": {
       "cordova-plugin-tts": {},
       "cordova-plugin-inappbrowser": {},
-      "cordova-plugin-android-permissions": {}
+      "cordova-plugin-android-permissions": {},
+      "cordova-plugin-dialogs": {}
     }
   }
 }

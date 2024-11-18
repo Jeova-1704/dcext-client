@@ -11,6 +11,20 @@ window.addEventListener('beforeunload', function () {
 });
 
 function logout() {
-    localStorage.clear();
-    window.location.href = '/www';
+    navigator.notification.confirm(
+        'Você tem certeza que deseja sair?',
+        function(buttonIndex) {
+            if (buttonIndex === 1) {  
+                localStorage.removeItem('user');
+                
+                window.location.href = "/login";
+
+                if (navigator.app) {
+                    navigator.app.exitApp();
+                }
+            }
+        },
+        'Confirmar Logout',
+        ['Sim', 'Não']
+    );
 }
