@@ -8,27 +8,19 @@
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta http-equiv="Content-Security-Policy" content="default-src *; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src *; img-src * data:; style-src * 'unsafe-inline';">
-    <!-- Color theme for statusbar (Android only) -->
     <meta name="theme-color" content="#2196f3">
-    <!-- Your app title -->
     <title>Meu dia a dia</title>
-    <!-- Path to Framework7 Library Bundle CSS -->
-    <link rel="stylesheet" href="lib/framework7-bundle.min.css"><!-- CSS PERSONALIZADO PARA MENU-->
+    <link rel="stylesheet" href="lib/framework7-bundle.min.css">
     <link rel="stylesheet" href="css/minijogosStyle.css">
 
 
 </head>
 
 <body>
-    <!-- App root element -->
     <div id="app">
-
-        <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
-            <!-- Initial Page, "data-name" contains page name -->
             <div data-name="link3" class="page">
 
-                <!-- Top Navbar topo-->
                 <div class="top-nav">
                     <h1 class="title-logo"> <span>Meu dia</span> a dia</h1>
                     <a href="#" class="btn-logout hover-effect" onclick="logout()">
@@ -36,7 +28,6 @@
                     </a>
                  </div>
 
-                <!-- Scrollable page content -->
                 <div class="page-content">
                     <div class="block">
                         
@@ -51,8 +42,7 @@
                                             <p class="card-text">
                                                 Aprenda sobre plurais de uma forma divertida e interativa.
                                             </p>
-                                            <!-- Modificando para abrir no InAppBrowser -->
-                                            <a href="#" class="btn btn-primary" onclick="abrirLinkExterno('https://www.escolagames.com.br/jogos/jogo-do-plural')">Jogar</a>
+                                            <a href="#" class="btn btn-primary" onclick='openURL("https://www.escolagames.com.br/jogos/jogo-do-plural")'>Jogar</a>
 
                                         </div>
                                     </div>
@@ -67,7 +57,7 @@
                                             <p class="card-text">
                                                 Complete os números e melhore sua habilidade matemática.
                                             </p>
-                                            <a href="#" class="btn btn-primary" onclick="abrirLinkExterno('https://www.escolagames.com.br/jogos/completando-os-numeros')">Jogar</a>
+                                            <a href="#" class="btn btn-primary" onclick='openURL("https://www.escolagames.com.br/jogos/completando-os-numeros")'>Jogar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +71,7 @@
                                             <p class="card-text">
                                                 Encontre as palavras escondidas na sopa de letrinhas.
                                             </p>
-                                            <a href="#" class="btn btn-primary" onclick="abrirLinkExterno('https://www.escolagames.com.br/jogos/sopa-de-letrinhas')">Jogar</a>
+                                            <a href="#" class="btn btn-primary" onclick='openURL("https://www.escolagames.com.br/jogos/sopa-de-letrinhas")'>Jogar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -95,7 +85,7 @@
                                             <p class="card-text">
                                                 Organize as palavras em ordem alfabética e divirta-se aprendendo.
                                             </p>
-                                            <a href="#" class="btn btn-primary" onclick="abrirLinkExterno('https://www.escolagames.com.br/jogos/ordem-alfabetica')">Jogar</a>
+                                            <a href="#" class="btn btn-primary" onclick="openURL('https://www.escolagames.com.br/jogos/ordem-alfabetica')">Jogar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -109,7 +99,7 @@
                                             <p class="card-text">
                                                 Teste seus conhecimentos sobre geografia com perguntas desafiadoras.
                                             </p>
-                                            <a href="#" class="btn btn-primary" onclick="abrirLinkExterno('https://www.escolagames.com.br/jogos/quiz-de-geografia')">Jogar</a>
+                                            <a href="#" class="btn btn-primary" onclick="openURL('https://www.escolagames.com.br/jogos/quiz-de-geografia')">Jogar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +113,7 @@
                                             <p class="card-text">
                                                 Junte as letras e forme palavras corretamente.
                                             </p>
-                                            <a href="#" class="btn btn-primary" onclick="abrirLinkExterno('https://www.escolagames.com.br/jogos/forma-palavras')">Jogar</a>
+                                            <a href="#" class="btn btn-primary" onclick="openURL('https://www.escolagames.com.br/jogos/forma-palavras')">Jogar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -135,7 +125,6 @@
         </div>
     </div>
 
-    <!-- Path to Framework7 Library Bundle JS-->
     <script src="cordova.js"></script>
     <script src="js/main.js"></script>
     <script src="js/minijogos.js"></script>
@@ -145,19 +134,9 @@
     <script src="js/main.js"></script>
     <scrip src="js/minijogos.js"></scrip>
     <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
-	<!-- jQuery -->
 	<script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>	
-    <!-- Roteamento do app-->
     <script type="text/javascript" src="js/routes.js"></script>
     <script src="cordova.js"></script>
-        <!-- Script do InAppBrowser -->
-    <script type="text/javascript">
-        // Função para abrir um link externo no InAppBrowser
-        function abrirLinkExterno(url) {
-            // Usa o InAppBrowser para abrir a URL no navegador interno do app
-            cordova.InAppBrowser.open(url, '_blank', 'location=yes');
-        }
-    </script>
 </body>
 
 </html>

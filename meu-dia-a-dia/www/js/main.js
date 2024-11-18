@@ -28,3 +28,17 @@ function logout() {
         ['Sim', 'Não']
     );
 }
+
+
+function openURL(url) {
+    var url = url;
+    var browser = window.open(url, '_system');  
+
+    document.addEventListener('backbutton', function(e) {
+        if (browser != null && browser.isOpen()) {
+            browser.close();
+        } else {
+            navigator.app.exitApp(); 
+        }
+    });
+}
