@@ -33,19 +33,29 @@ function displayCards(cartoes) {
                 </div>
             </div>
         `;
-
         container.insertAdjacentHTML("beforeend", cardHtml);
     });
 }
 
-// Função para falar o título
-function speakTitle(title) {
-    // Verifica se a API de síntese de fala está disponível
-    if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance(title);
-        speechSynthesis.speak(utterance);
+// Função para falar o texto usando TTS
+function speakText(text) {
+    // Verifica se o plugin de TTS está disponível
+    if (window.TTS) {
+        window.TTS.speak({
+            text: text,
+            locale: 'pt-BR', // Defina o idioma para Português Brasileiro
+            rate: 1.0        // A velocidade do TTS (1.0 é normal)
+        }).then(function () {
+            console.log("Texto falado com sucesso!");
+        }).catch(function (error) {
+            console.error("Erro ao tentar falar o texto: ", error);
+        });
     } else {
-        console.error("API de síntese de fala não está disponível.");
+        console.error("O plugin TTS não está disponível.");
     }
 }
 
+// Exemplo de como usar a função para falar um título
+function speakTitle(title) {
+    speakText(title);
+}

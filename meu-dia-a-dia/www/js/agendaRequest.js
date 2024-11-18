@@ -37,7 +37,7 @@ function fetchAgenda() {
                                         ${agenda.toDos.map(todo => `<li class="widget-49-meeting-item"><span>${todo.description}</span></li>`).join('')}
                                     </ol>
                                     <div class="widget-49-meeting-action">
-                                        <a href="#" class="btn btn-sm btn-flash-border-primary">Concluido</a>
+                                        <a href="#" class="btn btn-sm btn-flash-border-primary">Marcar como concluida?</a>
                                     </div>
                                 </div>
                             </div>
