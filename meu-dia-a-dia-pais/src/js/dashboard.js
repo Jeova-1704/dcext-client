@@ -19,6 +19,7 @@ function loadTasks(userId) {
                          .replace('{mes}', task.mes)
                          .replace('{hora_inicial}', task.hora_inicial)
                          .replace('{hora_final}', task.hora_final)
+                         .replace('{status}', task.concluida ? 'Concluida' : 'Atribuida')
                          .replace(/{agenda_id}/g, task.agenda_id);
 
                 tbody.insertAdjacentHTML('beforeend', row);
@@ -243,5 +244,4 @@ function selectIcon(iconClass) {
     // Fecha o modal após a seleção
     $('#selectIconModal').modal('hide');
 }
-
 
