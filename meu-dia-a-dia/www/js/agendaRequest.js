@@ -1,6 +1,6 @@
 function fetchAgenda() {
     const userId = localStorage.getItem("idUser");
-    const url = `http://localhost:8080/api/v1/agenda-to-do/userTask/${userId}`;
+    const url = `https://api-dcext-yxco.onrender.com/api/v1/agenda-to-do/${userId}`;
 
     fetch(url)
         .then(response => {
@@ -53,7 +53,7 @@ function fetchAgenda() {
 }
 
 function markAsCompleted(agendaId) {
-    const url = `http://localhost:8080/api/v1/agenda-to-do/${agendaId}/complete`;
+    const url = `https://api-dcext-yxco.onrender.com/api/v1/agenda-to-do/${agendaId}/complete`;
     
     // Dados para atualizar a agenda
     const updatedAgenda = {
