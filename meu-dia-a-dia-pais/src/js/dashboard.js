@@ -200,6 +200,7 @@ function openCreateCardForm() {
 }
 
 $('#createCardForm').on('submit', function (e) {
+    console.log('Formulário submetido'); 
     e.preventDefault();
 
     const cardTitle = $('#cardTitle').val();

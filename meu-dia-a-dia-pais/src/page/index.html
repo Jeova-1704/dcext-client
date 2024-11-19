@@ -99,8 +99,6 @@
     </div>
     <!-- Feature End -->
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="http://127.0.0.1:5500/lib/wow/wow.min.js"></script>
     <!-- Modal de Agenda -->
     <div class="modal fade" id="agendaModal" tabindex="-1" aria-labelledby="agendaModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -118,7 +116,6 @@
                                 <th scope="col">Data</th>
                                 <th scope="col">Hora Inicial</th>
                                 <th scope="col">Hora Final</th>
-                                <th scope="col">Status</th>
                                 <th scope="col">Ações</th>
                             </tr>
                         </thead>
@@ -361,7 +358,6 @@
             <td>{dia}/{mes}</td>
             <td>{hora_inicial}</td>
             <td>{hora_final}</td>
-            <td>{status}</td>
             <td>
                 <!-- /botão visualizar agenda especifica -->
                 <button class="btn btn-sm btn-primary" onclick="openViewForm('{agenda_id}')">Visualizar</button>
@@ -442,10 +438,6 @@
         // Carrega os jogos ao abrir o modal
         document.getElementById('gamesModal').addEventListener('show.bs.modal', loadGames);
     </script>
-
-    <!-- Inclua o script dashboard.js -->
-    <script src="../js/dashboard.js"></script>
-
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
