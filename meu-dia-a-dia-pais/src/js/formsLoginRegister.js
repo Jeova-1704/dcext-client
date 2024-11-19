@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         alert('email: ' + email + ' password: ' + password);
         try {
-            const response = await fetch('http://localhost:8080/api/v1/user/login', {
+            const response = await fetch('https://api-dcext-yxco.onrender.com/api/v1/user/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         alert('username: ' + username + ' firstName: ' + firstName + ' lastName: ' + lastName + ' age: ' + age + ' email: ' + email + ' password_register: ' + password);
         try {
-            const response = await fetch('http://localhost:8080/api/v1/user/register', {
+            const response = await fetch('https://api-dcext-yxco.onrender.com/api/v1/user/register', {
                 method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json',

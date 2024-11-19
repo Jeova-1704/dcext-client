@@ -39,12 +39,11 @@ function displayCards(cartoes) {
 
 // Função para falar o texto usando TTS
 function speakText(text) {
-    // Verifica se o plugin de TTS está disponível
     if (window.TTS) {
         window.TTS.speak({
             text: text,
-            locale: 'pt-BR', // Defina o idioma para Português Brasileiro
-            rate: 1.0        // A velocidade do TTS (1.0 é normal)
+            locale: 'pt-BR', 
+            rate: 1.0        
         }).then(function () {
             console.log("Texto falado com sucesso!");
         }).catch(function (error) {
@@ -55,7 +54,6 @@ function speakText(text) {
     }
 }
 
-// Exemplo de como usar a função para falar um título
 function speakTitle(title) {
     speakText(title);
 }

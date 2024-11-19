@@ -5,7 +5,7 @@ function logout () {
 
 function loadTasks(userId) {
     $.ajax({
-        url: `http://localhost:8080/api/v1/agenda-to-do/${userId}`,
+        url: `https://api-dcext-yxco.onrender.com/api/v1/agenda-to-do/${userId}`,
         method: 'GET',
         success: function(response) {
             const tbody = document.getElementById('agendaTableBody');
@@ -70,7 +70,7 @@ function submitCreateForm() {
     };
 
     $.ajax({
-        url: "http://localhost:8080/api/v1/agenda-to-do",
+        url: "https://api-dcext-yxco.onrender.com/api/v1/agenda-to-do",
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(agendaRequest),
@@ -90,7 +90,7 @@ function submitCreateForm() {
 function deleteTask(agendaId) {
     if (confirm("Tem certeza de que deseja deletar esta tarefa?")) {
         $.ajax({
-            url: `http://localhost:8080/api/v1/agenda-to-do/${agendaId}`,
+            url: `https://api-dcext-yxco.onrender.com/api/v1/agenda-to-do/${agendaId}`,
             method: 'DELETE',
             success: function() {
                 alert("Tarefa deletada com sucesso!");
@@ -109,7 +109,7 @@ $('#agendaModal').on('show.bs.modal', function() {
 
 function openViewForm(agendaId) {
     $.ajax({
-        url: `http://localhost:8080/api/v1/agenda-to-do/agenda/${agendaId}`,
+        url: `https://api-dcext-yxco.onrender.com/api/v1/agenda-to-do/agenda/${agendaId}`,
         method: 'GET',
         success: function(agenda) {
             alert(agenda.titulo) 
@@ -153,7 +153,7 @@ function openViewForm(agendaId) {
 // cards de comunicação
 function loadCards(userId) {
     $.ajax({
-        url: `http://localhost:8080/api/v1/cards/get-all`,
+        url: `https://api-dcext-yxco.onrender.com/api/v1/cards/get-all`,
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({ "user_id": userId }),
@@ -176,7 +176,7 @@ function loadCards(userId) {
 
 function deleteCard(cardId) {
     $.ajax({
-        url: `http://localhost:8080/api/v1/cards`,
+        url: `https://api-dcext-yxco.onrender.com/api/v1/cards`,
         method: 'DELETE',
         contentType: 'application/json',
         data: JSON.stringify({ "cardId": cardId }),
@@ -208,7 +208,7 @@ $('#createCardForm').on('submit', function (e) {
     const userId = localStorage.getItem('userId');
 
     $.ajax({
-        url: 'http://localhost:8080/api/v1/cards/create',
+        url: 'https://api-dcext-yxco.onrender.com/api/v1/cards/create',
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({
