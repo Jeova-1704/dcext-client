@@ -2,7 +2,7 @@ function fetchCommunicationCards() {
     const userId = localStorage.getItem("idUser")
     
     $.ajax({
-        url: "https://api-dcext-yxco.onrender.com/api/v1/cards/get-all",
+        url: "http://localhost:8080/api/v1/cards/get-all",
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify({ user_id: userId }),

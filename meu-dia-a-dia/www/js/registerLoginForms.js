@@ -23,7 +23,7 @@ $('#login-btn').on('click', function () {
     
     $.ajax({
         //url: "http://192.168.1.107:8080/api/v1/user/login", 
-        url: "https://api-dcext-yxco.onrender.com/api/v1/user/login", 
+        url: "http://localhost:8080/api/v1/user/login", 
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify({ email: email, password: password }),
@@ -63,7 +63,7 @@ $('#register-btn').on('click', function () {
 
     $.ajax({
         //url: "http://192.168.1.107:8080/api/v1/user/register",  // Altere para o IP do seu PC
-        url: "https://api-dcext-yxco.onrender.com/api/v1/user/register",
+        url: "http://localhost:8080/api/v1/user/register",
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify({

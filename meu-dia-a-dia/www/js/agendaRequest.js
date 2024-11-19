@@ -1,6 +1,6 @@
 function fetchAgenda() {
     const userId = localStorage.getItem("idUser");
-    const url = `https://api-dcext-yxco.onrender.com/api/v1/agenda-to-do/${userId}`;
+    const url = `http://localhost:8080/api/v1/agenda-to-do/userTask/${userId}`;
 
     fetch(url)
         .then(response => {
@@ -10,13 +10,12 @@ function fetchAgenda() {
             return response.json();
         })
         .then(data => {
-            const container = document.getElementById("agenda-container"); // Adicione um div com o id "agenda-container" no HTML
-            container.innerHTML = ""; // Limpa o conteúdo anterior
+            const container = document.getElementById("agenda-container");
+            container.innerHTML = "";
 
             data.forEach(agenda => {
-                // Criação do HTML para cada tarefa
                 const agendaHTML = `
-                    <div class="col-lg-4">
+                    <div class="col-lg-4" id="agenda-${123}">
                         <div class="card card-margin">
                             <div class="card-header no-border">
                                 <h5 class="card-title">${agenda.dia_da_semana}</h5>
@@ -37,7 +36,7 @@ function fetchAgenda() {
                                         ${agenda.toDos.map(todo => `<li class="widget-49-meeting-item"><span>${todo.description}</span></li>`).join('')}
                                     </ol>
                                     <div class="widget-49-meeting-action">
-                                        <a href="#" class="btn btn-sm btn-flash-border-primary">Marcar como concluida?</a>
+                                        <button class="btn btn-sm btn-flash-border-primary" onclick="markAsCompleted('${agenda.agenda_id}')">Marcar como concluída?</button>
                                     </div>
                                 </div>
                             </div>
@@ -45,11 +44,40 @@ function fetchAgenda() {
                     </div>
                 `;
 
-                // Adiciona o HTML da tarefa ao container
                 container.insertAdjacentHTML("beforeend", agendaHTML);
             });
         })
         .catch(error => {
             console.error('Erro ao carregar a agenda:', error);
         });
+}
+
+function markAsCompleted(agendaId) {
+    const url = `http://localhost:8080/api/v1/agenda-to-do/${agendaId}/complete`;
+    
+    // Dados para atualizar a agenda
+    const updatedAgenda = {
+        concluida: true
+    };
+
+    fetch(url, {
+        method: 'PUT', // Usando o PUT para atualizar a agenda
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedAgenda) // Envia o campo 'concluida' como 'true'
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao marcar a agenda como concluída');
+        }
+        const agendaElement = document.getElementById(`agenda-${agendaId}`);
+        if (agendaElement) {
+            agendaElement.classList.add("completed"); // Adiciona a classe 'completed' na tarefa
+        }
+        alert('Agenda marcada como concluída!');
+    })
+    .catch(error => {
+        console.error('Erro ao marcar a agenda como concluída:', error);
+    });
 }
